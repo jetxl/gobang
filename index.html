@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>五子棋小游戏</title>
+    
+    <style type="text/css">
+        
+    </style>
 </head>
 <body>
 <div class="main">
@@ -10,21 +14,22 @@
     <div class="chessboard"></div>
     <!--当前状态-->
     <div class="status">
-        <div class="status-tag"></div>
+        <div class="status-tag" v-bind="changeStatus" data="status-white"></div>
     </div>
     <!--操作栏-->
     <div class="option-box">
-        <button class="btn">悔棋</button>
-        <button class="btn">撤销悔棋</button>
-        <button class="btn">切换版本</button>
-        <span class="version">Canvas版本</span>
+        <button class="btn" v-click="back">悔棋</button>
+        <button class="btn" v-click="next">撤销悔棋</button>
+        <button class="btn" v-click="changeVersion">切换版本</button>
+        <span class="version"><span v-text="version">Canvas</span>版本</span>
     </div>
 </div>
 </body>
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script>
-    import gobang from './index';
+    import Gobang from './index';
+    import DomFactory from './DomFactory';
     var gobang = Gobang();
-
+    DomFactory($('.main'),gobang);
 </script>
 </html>
