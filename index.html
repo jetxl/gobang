@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>五子棋小游戏</title>
+</head>
+<body>
+<div class="main">
+    <!--棋盘-->
+    <div class="chessboard"></div>
+    <!--当前状态-->
+    <div class="status">
+        <div class="status-tag"></div>
+    </div>
+    <!--操作栏-->
+    <div class="option-box">
+        <button class="btn">悔棋</button>
+        <button class="btn">撤销悔棋</button>
+        <button class="btn">切换版本</button>
+        <span class="version">Canvas版本</span>
+    </div>
+</div>
+</body>
+
+<script>
+    import gobang from './index';
+    var gobang = Gobang();
+
+</script>
+</html>
